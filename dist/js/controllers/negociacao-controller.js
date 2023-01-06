@@ -8,5 +8,12 @@ export class NegociacaoController {
     adiciona() {
         const neegociacao = new Negociacao(this.inputData.valueAsDate, this.inputQuantidade.valueAsNumber, this.inputValor.valueAsNumber);
         console.log(neegociacao);
+        this.limparFomulario();
+    }
+    limparFomulario() {
+        this.inputData.value = '';
+        this.inputQuantidade.value = '';
+        this.inputValor.value = '';
+        this.inputData.focus();
     }
 }
