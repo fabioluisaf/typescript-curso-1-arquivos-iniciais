@@ -11,4 +11,11 @@ export class Negociacao {
         const dataProxy = new Date(this._data.getTime());
         return dataProxy;
     }
+    static criaDe(dataString, qtdString, valString) {
+        const exp = /-/g;
+        const data = new Date(dataString.replace(exp, ','));
+        const qtd = parseInt(qtdString);
+        const val = parseFloat(valString);
+        return new Negociacao(data, qtd, val);
+    }
 }
